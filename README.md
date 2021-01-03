@@ -1,0 +1,2 @@
+# vladProject
+vladMagazineProject
