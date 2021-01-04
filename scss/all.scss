@@ -1,0 +1,21 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Varta', sans-serif;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@import 'mixins/mixins';
+@import 'variables/variables';
+@import 'header';
+@import 'main';
+@import 'footer';
+@import 'mutual';

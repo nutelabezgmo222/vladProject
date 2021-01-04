@@ -1,0 +1,13 @@
+@mixin main-button($font-color, $button-color){
+  padding: 10px 20px;
+  border-radius: 30px;
+  background-color: $button-color;
+  color: $font-color;
+}
+@mixin text-format($font-size, $line-height, $font-weight, $color, $text-align) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  color: $color;
+  text-align: $text-align;
+}
