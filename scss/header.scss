@@ -1,7 +1,26 @@
 .header {
-  height: calc(100vh - #{$nav-strip-height});
-  background-color: #0E0E10;
-  margin-top: $nav-strip-height;
+    background-color: #0E0E10;
+    margin-top: $nav-strip-height;
+  &.index-page {
+    height: calc(100vh - #{$nav-strip-height});
+  }
+  .product-header {
+    padding: 50px 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-title {
+      @include text-format(40px, 45px, 700, #fff, center);
+      margin-bottom: 25px;
+    }
+    &-description {
+      max-width: 500px;
+      @include text-format(18px, 28px, 400, #fff, center);
+    }
+  }
   .nav-strip {
     color: #fff;
     position: fixed;
@@ -17,7 +36,7 @@
       justify-content: space-between;
     }
     .logo {
-      margin-right: 20px;
+      margin-right: 65px;
     }
     .nav{
       flex-grow: 1;
@@ -25,7 +44,7 @@
         display: flex;
         list-style: none;
         li {
-          margin-right: 10px;
+          margin-right: 20px;
         }
       }
     }

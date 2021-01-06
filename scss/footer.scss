@@ -2,6 +2,8 @@
   background-color: #123132;
   padding: 75px 0 50px 0;
   color: #fff;
+  flex: 0 0 auto;
+
   .footer-info {
     display: flex;
     justify-content: space-around;
@@ -29,7 +31,7 @@
   }
   .subscribe {
     &-title {
-      margin-bottom: 25px;
+      margin: 50px 0;
       letter-spacing: 1rem;
       font-weight: normal;
       font-size: 25px;

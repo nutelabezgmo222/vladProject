@@ -10,15 +10,48 @@ a {
   color: #fff;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .header {
-  height: calc(100vh - 50px);
   background-color: #0E0E10;
   margin-top: 50px;
+}
+.header.index-page {
+  height: calc(100vh - 50px);
+}
+.header .product-header {
+  padding: 50px 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header .product-header-title {
+  font-size: 40px;
+  line-height: 45px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 25px;
+}
+.header .product-header-description {
+  max-width: 500px;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
 }
 .header .nav-strip {
   color: #fff;
@@ -36,7 +69,7 @@ a {
   justify-content: space-between;
 }
 .header .nav-strip .logo {
-  margin-right: 20px;
+  margin-right: 65px;
 }
 .header .nav-strip .nav {
   flex-grow: 1;
@@ -46,7 +79,7 @@ a {
   list-style: none;
 }
 .header .nav-strip .nav .nav-list li {
-  margin-right: 10px;
+  margin-right: 20px;
 }
 .header .nav-strip .nav-user {
   display: flex;
@@ -94,8 +127,9 @@ a {
 
 .main {
   background: #d8d1d1;
-  background: linear-gradient(0deg, #d8d1d1 60%, white 70%);
+  background: linear-gradient(0deg, #d8d1d1 80%, white 80%);
   background-attachment: fixed;
+  flex: 1 0 auto;
 }
 .main .main-section {
   padding-top: 40px;
@@ -233,11 +267,107 @@ a {
   padding: 10px;
   min-height: 170px;
 }
+.main .product-section {
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #E4E4EE;
+}
+.main .product-section-title {
+  align-self: center;
+  font-size: 40px;
+  line-height: 44px;
+  font-weight: 400;
+  color: #A05841;
+  text-align: center;
+  text-shadow: 1px 1px 0px #fff, 2px 2px 0px #A05841;
+  margin-bottom: 30px;
+}
+.main .product-section .products-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 35px;
+  grid-row-gap: 20px;
+}
+.main .product-section .products-list .product-item {
+  background-color: #EDEDEE;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main .product-section .products-list .product-img-box {
+  position: relative;
+  background-color: #fff;
+}
+.main .product-section .products-list .product-img-box img {
+  width: 100%;
+  min-height: 250px;
+  object-fit: contain;
+}
+.main .product-section .products-list .product-img-box .item-view {
+  font-size: 14px;
+  padding: 5px 10px;
+  position: absolute;
+  color: #A05841;
+  bottom: 5px;
+  left: 50%;
+  transform: translate(-50%);
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.5s ease;
+}
+.main .product-section .products-list .product-img-box .item-view:hover {
+  background-color: #A05841;
+  color: #fff;
+}
+.main .product-section .products-list .product-img-box .item-label {
+  position: absolute;
+  color: #fff;
+  padding: 7px 25px;
+  font-size: 13px;
+  left: 0;
+  top: 0;
+  background-color: #123132;
+}
+.main .product-section .products-list .product-title {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #A05841;
+  text-align: center;
+}
+.main .product-section .products-list .product-price {
+  margin-top: 5px;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #A05841;
+  text-align: center;
+}
+.main .product-section .products-list .product-button {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background-color: #A05841;
+  color: #fff;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  border-radius: 0;
+  cursor: pointer;
+}
 
 .footer {
   background-color: #123132;
   padding: 75px 0 50px 0;
   color: #fff;
+  flex: 0 0 auto;
 }
 .footer .footer-info {
   display: flex;
@@ -262,7 +392,7 @@ a {
   align-items: center;
 }
 .footer .subscribe-title {
-  margin-bottom: 25px;
+  margin: 50px 0;
   letter-spacing: 1rem;
   font-weight: normal;
   font-size: 25px;
