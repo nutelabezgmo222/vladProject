@@ -11,6 +11,7 @@
   cursor: pointer;
   padding: 10px 20px;
 }
+
 .section-header {
   @include text-format(34px, 36px, 500, #A05841, left);
   text-transform: uppercase;
@@ -29,4 +30,168 @@
   height: 10px;
   background-color: #A05841;
   margin-bottom: 20px;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.accordeon {
+  .acc-body {
+    display: none;
+  }
+}
+.product-item {
+  background-color: #EDEDEE;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.product-img-box {
+  position: relative;
+  background-color: #fff;
+  img {
+    width: 100%;
+    min-height: 250px;
+    object-fit: contain;
+  }
+  .item-view {
+    font-size: 14px;
+    padding: 5px 10px;
+    position: absolute;
+    color: $main-color;
+    bottom: 5px;
+    left: 50%;
+    transform: translate(-50%);
+    cursor: pointer;
+    z-index: 2;
+    transition: all .5s ease;
+    &:hover {
+      background-color: $main-color;
+      color: #fff;
+    }
+  }
+  .item-label {
+    position: absolute;
+    color: #fff;
+    padding: 7px 25px;
+    font-size: 13px;
+    left: 0;
+    top: 0;
+    background-color: #123132;
+  }
+}
+.product-title {
+  margin-top: 10px;
+  @include text-format(14px, 16px, 400, $main-color, center);
+}
+.product-price {
+  margin-top: 5px;
+  @include text-format(14px, 16px, 400, $main-color, center);
+}
+.product-button {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  @include main-button(#fff, $main-color);
+  @include text-format(14px, 16px, 400, #fff, center);
+  border-radius: 0;
+  cursor: pointer;
+}
+.slider-container {
+  overflow: hidden;
+  transition: all .3s ease;
+  position: relative;
+  .slider-header {
+    @include text-format(30px, 35px, 400, $main-color, center);
+  }
+  .slider-inner {
+    display: flex;
+    position: relative;
+    transition: all .3s ease;
+  }
+  .slider-next, .slider-prev {
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    border-left: 10px solid $main-color;
+    border-top: 10px solid $main-color;
+    z-index: 5;
+    cursor: pointer;
+    transition: all .3s ease;
+  }
+  .slider-next {
+    right: 10px;
+    transform: rotate(135deg);
+    &:hover {
+      transform: rotate(135deg) scale(1.2);
+    }
+  }
+  .slider-prev {
+    left: 10px;
+    transform: rotate(-45deg);
+    &:hover {
+      transform: rotate(-45deg) scale(1.2);
+    }
+  }
+}
+.breadcrumbs-box {
+  .breadcrumbs {
+    display: flex;
+    list-style: none;
+    li {
+      &:after {
+        content: '/';
+        margin: 0 5px;
+      }
+      &:last-child {
+        &:after {
+          content: none;
+        }
+      }
+      a {
+        color: $main-color;
+        &.current {
+          color: rgba(162, 99, 57, 0.6);
+          &:hover {
+            pointer-events: none;
+          }
+        }
+        transition: all .3s ease;
+        &:hover {
+          color: $main-dark;
+        }
+      }
+    }
+  }
+}
+.page-navigation {
+  display: flex;
+  .page-next, .page-prev {
+    display: block;
+    a {
+      color: $main-color;
+      transition: all .3s ease;
+      &:hover {
+        color: $main-dark;
+      }
+    }
+  }
+  .page-prev {
+    &:before {
+      content: '<';
+      margin-right: 5px;
+    }
+    &:after {
+      margin: 0 5px;
+      content: '|';
+    }
+  }
+  .page-next {
+    &:after {
+      margin-left: 5px;
+      content: '>';
+    }
+  }
 }

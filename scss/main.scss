@@ -1,10 +1,170 @@
 .main {
-  background: rgb(216,209,209);
-  background: linear-gradient(0deg, rgba(216,209,209,1) 80%, rgba(255,255,255,1) 80%);
-  background-attachment: fixed;
   flex: 1 0 auto;
+  &.index-page {
+    background: rgb(216,209,209);
+    background: linear-gradient(0deg, rgba(216,209,209,1) 80%, rgba(255,255,255,1) 80%);
+    background-attachment: fixed;
+  }
   .main-section {
     padding-top: 40px;
+  }
+  .releated-products-section {
+    margin: 40px 0;
+  }
+  .item-section {
+    padding-top: 40px;
+    @include text-format(16px, 24px, 400, $main-color, left);
+    .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .item-nav-box {
+      flex-basis: 100%;
+      display: flex;
+      justify-content: space-between;
+      color: $main-color;
+      margin-bottom: 40px;
+    }
+    .item-group-box {
+      display: flex;
+      flex-direction: column;
+      margin-right: 30px;
+      &.img-group-box {
+        max-width: 400px;
+      }
+      &.description-group-box {
+        width: 350px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .item-main-img-box {
+        padding: 5px;
+        background-color: #fff;
+        border: 1px solid $main-color;
+        margin-bottom: 10px;
+      }
+      .item-additional-img-box {
+        display: flex;
+        .item-img-box {
+          max-height: 100px;
+          padding: 5px;
+          &.choosen {
+            border: 3px solid $main-color;
+          }
+        }
+      }
+      .item-img-detail {
+        padding: 5px;
+        margin-top: 20px;
+      }
+      .buy-button {
+        border-radius: 0;
+        margin-top: 10px;
+        text-align: center;
+        background-color: #123132;
+      }
+      .item {
+        &-title {
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 28px;
+          margin-bottom: 10px;
+        }
+        &-id {
+          margin-bottom: 10px;
+          font-size: 20px;
+        }
+        &-cost {
+          margin-bottom: 10px;
+          font-size: 20px;
+        }
+        &-quantity-title {
+          margin-bottom: 10px;
+          font-size: 20px;
+        }
+        &-quantity-box {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 15px;
+          margin-bottom: 15px;
+          .quantity-minus {
+            color: $main-color;
+            font-size: 35px;
+            font-weight: bold;
+            margin-right: 20px;
+          }
+          .quantity-value {
+            padding: 5px 20px;
+            border: 1px solid $main-color;
+            margin-right: 20px;
+          }
+          .quantity-add {
+            color: $main-color;
+            font-size: 35px;
+            font-weight: bold;
+            margin-right: 20px;
+          }
+        }
+        &-add-box {
+          display: flex;
+          .add-to-cart {
+            display: block;
+            flex-grow: 1;
+            border-radius: 0;
+            text-align: center;
+          }
+          .favorite-button {
+            width: 50px;
+            border: 1px solid $main-color;
+            margin-left: 15px;
+            background-image: url('../images/icons/heart.png');
+            background-position: center;
+            background-size: 30px 30px;
+            background-repeat: no-repeat;
+          }
+        }
+        &-accordeon {
+          margin-top: 20px;
+          .acc-head {
+            position: relative;
+            width: 100%;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 28px;
+            text-transform: uppercase;
+            cursor: pointer;
+            padding: 20px 0;
+            border-top: 1px solid $main-color;
+            transition: all .4s ease;
+            &.active {
+              &:after {
+                content: '-';
+              }
+            }
+            &:after {
+              position: absolute;
+              content: '+';
+              right: 5px;
+              top: 50%;
+              transform: translateY(-50%);
+              font-size: 30px;
+            }
+            &:first-child{
+              border-top: none;
+              padding-top: 0;
+            }
+          }
+          .acc-body {
+            font-size: 14px;
+            max-width: 100%;
+          }
+        }
+      }
+    }
   }
   .preview-section {
     .items-preview-box {

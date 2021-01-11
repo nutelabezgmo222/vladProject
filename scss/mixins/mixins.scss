@@ -3,6 +3,7 @@
   border-radius: 30px;
   background-color: $button-color;
   color: $font-color;
+  cursor: pointer;
 }
 @mixin text-format($font-size, $line-height, $font-weight, $color, $text-align) {
   font-size: $font-size;
